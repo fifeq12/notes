@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.note {
+    width: 10%;
+    height: 10vh;
+    position: absolute;
+    background-color: rebeccapurple;
+}
+.drop-area {
+    width: 50%;
+    height: 50vh;
+    margin: 1rem;
+    border: 4px dotted black;
+}
