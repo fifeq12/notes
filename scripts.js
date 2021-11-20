@@ -1,10 +1,10 @@
-let note;
 const notesContainer = document.querySelector('.notes-container');
 const navigationMenu = document.querySelector('.navigation-menu');
 const contextMenu = document.querySelector('.context-menu-panel');
 const addNote = document.querySelector('.add-note');
 
 let isGrabbed = false;
+let note;
 let offset;
 let highestZIndex = 10;
 
@@ -23,12 +23,8 @@ addNote.addEventListener('click', () => {
             note.offsetTop - e.clientY
         ];
         note.style.opacity = 0.8;
-        if(note.style.zIndex >= highestZIndex){
-            highestZIndex = note.style.zIndex;
-        } else {
-            highestZIndex++;
-            note.style.zIndex = highestZIndex;
-        }
+        note.style.zIndex >= highestZIndex ? 
+            highestZIndex = note.style.zIndex : note.style.zIndex = highestZIndex++;
     });
     notesContainer.appendChild(newNote);
 });
@@ -66,8 +62,8 @@ window.addEventListener('click', () => {
 
 notesContainer.addEventListener('contextmenu', function(e) {
     e.preventDefault();
-    contextMenu.style.top = e.clientY + 'px';
-    contextMenu.style.left = e.clientX + 'px';
+    contextMenu.style.top = e.clientY + 1 + 'px';
+    contextMenu.style.left = e.clientX + 1 + 'px';
     contextMenu.classList.add('visible');
 });
 
