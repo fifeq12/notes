@@ -1,16 +1,74 @@
 * {
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    font-family: 'Handlee', cursive;
+}
+.container {
+    display: block;
+}
+.navigation-menu {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    background-color: darkslategray;
+    box-shadow: 0px 2px 5px lightslategray;
+}
+.navigation-menu > h1 {
+    user-select: none;
+    font-family: 'Handlee', cursive;
+    color: whitesmoke;
+    font-size: 300%;
+}
+.notes-container {
+    width: 100%;
+    height: 100vh;
+    background-color: whitesmoke;
+    background-size: 14px 14px;
+    background-image:
+      linear-gradient(to right, grey 1px, transparent 1px),
+      linear-gradient(to bottom, grey 1px, transparent 1px);
 }
 .note {
-    width: 10%;
-    height: 10vh;
+    width: 8%;
+    height: 19vh;
+    border-radius: 10px;
+    z-index: 10;
     position: absolute;
-    background-color: rebeccapurple;
+    cursor: move;
+    box-shadow: 0px 2px 5px lightslategray;
 }
-.drop-area {
-    width: 50%;
-    height: 50vh;
-    margin: 1rem;
-    border: 4px dotted black;
+
+.context-menu-panel {
+    position: absolute;
+    width: 8%;
+    height: 3vh;
+    color: whitesmoke;
+    font-size: 120%;
+    z-index: 15;
+    background-color: darkslategray;
+    box-shadow: 0px 2px 5px lightslategray;
+    display: none;
+}
+
+.context-menu-panel.visible {
+    display: block;
+    pointer-events: all;
+}
+
+.add-note {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-note:hover {
+    background-color: lightslategrey;
+    cursor: pointer;
 }
